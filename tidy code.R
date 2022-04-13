@@ -1,4 +1,4 @@
-
+rm(list=ls())
 setwd("C:/Users/micge/Desktop/project/data")
 
 getwd()
@@ -9,6 +9,9 @@ require(tidyverse)
 library(readxl)
 require(readxl)
 
+library(dplyr)
+require(dplyr)
+
 
 excel_sheets("abalone data.xlsx")
 
@@ -18,7 +21,7 @@ abdat<-read_xlsx("abalone data.xlsx", sheet= "All Trial pH & Temp ")
 head(abdat)  
 
 attach(abdat)
-
+detach(abdat)
 abdat
 
 names(abdat)
@@ -26,29 +29,24 @@ names(abdat)
 summary(abdat)
  
 
-abdat<-read_xlsx("abalone data.xlsx", sheet= "All Trial pH & Temp ", range = "A1:I1711")
+abdat<-read_xlsx("abalone data.xlsx", sheet= "All Trial pH & Temp ", range = "B1:I1711")
 
+names(abdat)
 
-
-pivot_longer(cols = c("Abalone2.1(Prob 1)-Temperature(°C)",
-                        "Abalone2.1(Prob 1)-pH",             
-                        "Abalone2.2(Prob 2)-Temperature(°C)",
-                        "Abalone2.2(Prob 2)-pH",             
-                        "Abalone3.1(Prob 3)-Temperature(°C)",
-                        "Abalone3.1(Prob 3)-pH" ) 
+pivot_longer(cols = c( "AbaloneT1","AbalonePH1","AbaloneT2",  
+                       "AbalonePH2","AbaloneT3","AbalonePH3"),  names_to = "variable", values_to = "value")
  
 
 abdat
 
 unclass(Circulation)
 
-attach(abdat)
-detach(abdat)
-
 abdat$Circulation=as.character(abdat$Circulation)
+
 unclass(Circulation)
 
 summary(abdat)
+abdat
 
 
 
@@ -57,5 +55,9 @@ require(ggplot2)
 
 names(abdat)
 
-plot(temporal, Aba)
+plot(Location, AbalonePH1)
 length(abalone)
+
+
+
+
