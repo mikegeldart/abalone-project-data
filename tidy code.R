@@ -33,10 +33,13 @@ abdat<-read_xlsx("abalone data.xlsx", sheet= "All Trial pH & Temp ", range = "B1
 
 names(abdat)
 
-pivot_longer(cols = c( "AbaloneT1","AbalonePH1","AbaloneT2",  
-                       "AbalonePH2","AbaloneT3","AbalonePH3"),  names_to = "variable", values_to = "value")
- 
+##data is tidy
+longabdat<-read_xlsx("abalone data.xlsx", sheet= "All Trial pH & Temp ", range = "B1:I1711") %>%
+  pivot_longer(cols = c("AbaloneT1",   "AbalonePH1",  "AbaloneT2",   "AbalonePH2", 
+                        "AbaloneT3",   "AbalonePH3" ),
+               names_to = "variable", values_to = "value") %>%
 
+ 
 abdat
 
 unclass(Circulation)
@@ -49,14 +52,6 @@ summary(abdat)
 abdat
 
 
-
-library(ggplot2)
-require(ggplot2)
-
-names(abdat)
-
-plot(Location, AbalonePH1)
-length(abalone)
 
 
 
