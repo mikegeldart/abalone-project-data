@@ -12,6 +12,8 @@ AbalonePH1 = Abalone 2.1 (Prob 1) - pH
 
 Abalone T2 and T3, as aswell as AbalonePH2 and PH3 follow the same pattern, but are just measured with different probes.
 
+Fortunately, I have been given a neat data set that doesnt require too much modification.
+
 For my project I will be investigating abalone aquaculture in South Africa. Specifically, I will be looking at the Integrated Multi Trophic
 Aquaculture system (IMTA) used in an abalone farm and how different recirculation rates used in an IMTA may have different effects on
 the abalone species Halitois Midae. The data was collected from the project running at the Buffelsjags abalone farm. The Buffelsjags
